@@ -17,12 +17,14 @@ function addGalleryList(images) {
   const ulRef = document.querySelector('ul.gallery');
 
   const listItems = images.map(image => {
-    const liItem = document.createElement('li');
-    liItem.insertAdjacentHTML('afterbegin', `<img src=${image.url} alt="${image.alt}" />`);
-    return liItem;
-  });
+    return `
+        <li>
+          <img src=${image.url} alt="${image.alt}" />
+        </li>
+      `;
+  }).join('');
 
-  ulRef.append(...listItems);
+  ulRef.insertAdjacentHTML('afterbegin', listItems);
 }
 
 addGalleryList(images);

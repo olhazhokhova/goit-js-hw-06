@@ -25,12 +25,22 @@ button {
 
 ul.gallery {
   display: flex;
+  flex-wrap: wrap;
   list-style: none;
   margin-top: 50px;
 }
 
-ul.gallery li:nth-child(2) {
-  transform: scale(1.3);
+ul.gallery li {
+  width: 32%;
+  margin-bottom: 2%;
+}
+
+ul.gallery li ~ li {
+  margin-left: 2%;
+}
+
+ul.gallery li:nth-child(4n) {
+  margin-left: 0;
 }
 
 img {

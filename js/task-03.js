@@ -16,8 +16,11 @@ const images = [
 function addGalleryList(images) {
   const ulRef = document.querySelector('ul.gallery');
 
-  const listItems = images
-    .reduce((acc, image) => acc + `<li><img src=${image.url} alt="${image.alt}" /></li>`, "");
+  const listItems = images.reduce(
+    (acc, image) =>
+      acc + `<li><img src=${image.url} alt="${image.alt}" /></li>`,
+    '',
+  );
 
   ulRef.insertAdjacentHTML('afterbegin', listItems);
 }

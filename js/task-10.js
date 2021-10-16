@@ -23,10 +23,10 @@ function onClickCreate() {
   refs.input.value && createBoxes(+refs.input.value);
 }
 
-function onClickDestroy() {
+function destroyBoxes() {
   refs.input.value = '';
   refs.boxesContainer.innerHTML = '';
 }
 
 refs.create.addEventListener('click', onClickCreate);
-refs.destroy.addEventListener('click', onClickDestroy);
+refs.destroy.addEventListener('click', destroyBoxes);

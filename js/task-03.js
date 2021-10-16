@@ -16,13 +16,15 @@ const images = [
 function addGalleryList(images) {
   const ulRef = document.querySelector('ul.gallery');
 
-  const listItems = images.map(image => {
-    return `
+  const listItems = images
+    .map(image => {
+      return `
         <li>
           <img src=${image.url} alt="${image.alt}" />
         </li>
       `;
-  }).join('');
+    })
+    .join('');
 
   ulRef.insertAdjacentHTML('afterbegin', listItems);
 }
